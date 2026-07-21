@@ -4,7 +4,6 @@ import {
   FiActivity,
   FiUsers,
   FiCheckCircle,
-  FiXCircle,
   FiArrowRight,
   FiTrendingUp,
   FiZap,
@@ -55,7 +54,7 @@ const Dashboard = ({ user, setUser }) => {
 
   const totalApps = analytics?.summary?.reduce((s, t) => s + (t.total_applications || 0), 0) || 0;
   const totalEligible = analytics?.summary?.reduce((s, t) => s + (t.eligible || 0), 0) || 0;
-  const totalIneligible = analytics?.summary?.reduce((s, t) => s + (t.ineligible || 0), 0) || 0;
+  
   const eligRate = totalApps > 0 ? ((totalEligible / totalApps) * 100).toFixed(1) : 0;
 
   const statCards = [

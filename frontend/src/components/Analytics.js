@@ -12,7 +12,7 @@ import {
   Cell,
   ResponsiveContainer,
 } from 'recharts';
-import { FiTrendingUp, FiUsers, FiCheckCircle, FiXCircle, FiPercent } from 'react-icons/fi';
+import { FiTrendingUp, FiUsers, FiCheckCircle, FiXCircle } from 'react-icons/fi';
 import Navbar from './Navbar';
 import { getAnalytics } from '../services/api';
 
