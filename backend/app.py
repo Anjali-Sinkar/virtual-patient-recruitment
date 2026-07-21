@@ -21,6 +21,22 @@ from routes.applications_routes import applications_bp
 # --- App Initialization ---
 app = Flask(__name__, static_folder='build', static_url_path='/')
 
+# Load models and initialize DB
+try:
+    load_models()
+    conn = get_db_connection()
+    if conn:
+        print("✅ Database connection successful, running schema setup...")
+        with open(os.path.join(os.path.dirname(__file__), 'database', 'schema.sql'), 'r') as f:
+            schema_sql = f.read()
+        with conn.cursor() as cursor:
+            cursor.execute(schema_sql)
+        conn.commit()
+        conn.close()
+        print("✅ Database schema initialized successfully.")
+except Exception as e:
+    print(f"❌ Initialization failed: {e}")
+
 # --- Extension Initialization ---
 # More specific CORS configuration to handle credentials and headers properly.
 # This tells the backend to explicitly trust requests from your React development server.

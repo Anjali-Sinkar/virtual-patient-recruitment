@@ -1,5 +1,4 @@
--- Drop existing tables to ensure a clean slate, if they exist
-DROP TABLE IF EXISTS hypertension_patients, arthritis_patients, migraine_patients, phase1_patients, users CASCADE;
+-- Tables will be created if they do not exist
 
 -- Users table for authentication
 CREATE TABLE IF NOT EXISTS users (
