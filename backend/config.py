@@ -6,7 +6,7 @@ DB_CONFIG = {
     'host':     os.environ.get('DB_HOST', 'localhost'),
     'dbname':   os.environ.get('DB_NAME', 'virtual_patient_recruitment'),
     'user':     os.environ.get('DB_USER', 'postgres'),
-    'password': os.environ.get('DB_PASSWORD', 'VivekK@2003'),
+    'password': os.environ.get('DB_PASSWORD', ''),  # never commit a real password
     'port':     int(os.environ.get('DB_PORT', 5432))
 }
 
